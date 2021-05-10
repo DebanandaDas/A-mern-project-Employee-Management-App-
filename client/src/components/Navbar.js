@@ -8,26 +8,14 @@ const Navbar = () => {
 
     const { state, setState } = useContext(UserContext);
     console.log(`the navbar user ${state} `);
-    const myCSS = {
-        height: '40px',
-        width: '50px',
-    }
+    
 
     const RenderList = () => {
 
         if (!state) {
             return (
                 <>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <div className="container-fluid">
-                            <NavLink className="navbar-brand" to="#">
-                                XYZ-Comp
-                            </NavLink>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul className="navbar-nav ml-auto mb-2 mb-lg-0 ml-auto">
+                    
 
 
                                     <li className="nav-item">
@@ -49,28 +37,14 @@ const Navbar = () => {
 
 
 
-                                </ul>
-
-
-
-
-                            </div>
-                        </div>
-                    </nav>
+                               
                 </>
 
             )
         } else {
             return (
                 <>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <div className="container-fluid">
-                            <NavLink className="navbar-brand" to="#">XYZ-Comp</NavLink>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul className="navbar-nav ml-auto mb-2 mb-lg-0 ml-auto">
+                    
 
 
                                     <li className="nav-item">
@@ -87,17 +61,6 @@ const Navbar = () => {
                                         <NavLink className="nav-link" to="/logout">LogOut</NavLink>
                                     </li>
 
-
-
-
-                                </ul>
-
-
-
-
-                            </div>
-                        </div>
-                    </nav>
                 </>
             )
         }
@@ -106,10 +69,23 @@ const Navbar = () => {
 
     return (
         <>
+         <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <NavLink className="navbar-brand" to="/">
+                        XYX-Comp
+            </NavLink>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">
 
 
             <RenderList />
-
+           
+            </ul>
+            </div>
+            </nav>
 
         </>
     )
